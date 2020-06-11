@@ -12,6 +12,6 @@
     name: "*"
     state: latest
   
-  - name: Unconditionally reboot the machine with all defaults
+ - name: reboot all clients
   reboot:
 
