@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: clientservers
   order: sorted
   vars:
     http_port: 80
