@@ -17,7 +17,7 @@
     - restart apache
   - name: copy index.html
     template:
-      src: /home/mario/src/index.html
+      src: /var/www/html/index.html
       dest: /var/www/html/index.html
     notify:
     - restart apache
