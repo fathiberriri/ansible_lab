@@ -10,4 +10,4 @@
   - name: remove nano on all hosts
     dnf:
             name: nano
-            state: absent
+            state: present
