@@ -1,0 +1,13 @@
+---
+- hosts: all
+  order: sorted
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  
+  tasks:
+  - name: remove nano on all hosts
+    dnf:
+            name: nano
+            state: absent
