@@ -9,3 +9,7 @@
     dnf:
       name: "*"
       state: latest
+  - name: ensure apache is at the latest version
+    dnf:
+      name: "*"
+      state: latest
