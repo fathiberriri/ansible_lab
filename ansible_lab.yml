@@ -1,0 +1,40 @@
+---
+- hosts: webservers
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: mario
+  tasks:
+  - name: ensure apache is at the latest version
+    dnf:
+      name: httpd
+      state: latest
+  - name: write the apache config file
+    template:
+      src: /etc/httpd.conf
+      dest: /etc/httpd.conf
+    notify:
+    - restart apache
+  - name: copy index.html
+    template:
+      src: /home/mario/src/index.html
+      dest: /var/www/html/index.html
+    notify:
+    - restart apache
+  - name: ensure apache is running
+    service:
+      name: httpd
+      state: started
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
+
+- hosts: all
+  order: sorted
+  tasks:
+  - name: install nano on all hosts
+    dnf:
+            name: nano
+            state: present
