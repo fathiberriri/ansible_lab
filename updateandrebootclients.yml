@@ -13,4 +13,5 @@
     state: latest
   
   - name: reboot rhel clients
-    reboot:
+  reboot:
+  
