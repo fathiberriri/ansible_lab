@@ -11,7 +11,3 @@
   dnf:
     name: "*"
     state: latest
-  
- - name: reboot all clients
-  reboot:
-
