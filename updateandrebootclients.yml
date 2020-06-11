@@ -4,10 +4,8 @@
     http_port: 80
     max_clients: 200
   remote_user: root
-  
   tasks:
-  
-  - name: upgrade all packages
-  dnf:
-    name: "*"
-    state: latest
+  - name: ensure apache is at the latest version
+    dnf:
+      name: "*"
+      state: latest
