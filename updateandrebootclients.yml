@@ -1,0 +1,16 @@
+hosts: clientservers
+  order: sorted
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  
+  tasks:
+  
+  - name: upgrade all packages
+  dnf:
+    name: "*"
+    state: latest
+  
+  - name: reboot rhel clients
+    reboot:
